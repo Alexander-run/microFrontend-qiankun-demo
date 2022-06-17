@@ -3,7 +3,7 @@
     <h1 @click="handleSelect('/')">Vue 2 Application container</h1>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <el-menu-item index="/microCounter">Micro Counter</el-menu-item>
-      <el-menu-item index="/microTodo">Micro Todo List</el-menu-item>
+      <el-menu-item index="/microTodo">Todo List</el-menu-item>
     </el-menu>
     <body>
       <router-view></router-view>
