@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "qiankun": "^2.7.3"
+    "create-vite-app": "^1.21.0",
+    "qiankun": "^2.7.3",
+    "vue": "^3.2.37",
+    "vue-cli": "^2.9.6"
   }
 }
