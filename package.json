@@ -1,5 +1,7 @@
 {
+  "name": "micro-app2",
   "dependencies": {
+    "@vue/cli": "^5.0.6",
     "axios": "^0.27.2",
     "babel": "^6.23.0",
     "create-vite-app": "^1.21.0",

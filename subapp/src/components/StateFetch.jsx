@@ -43,7 +43,14 @@ const StateFetch = () => {
 
   return (
     <div key={globalState?.username}>
-      <Input onChange={changeUsername} defaultValue={globalState?.username}/>
+      <Form>
+        <Form.Item label="Username:">
+          <Input onChange={changeUsername} defaultValue={globalState?.username}/>
+        </Form.Item>
+        <Form.Item label="token:">
+          <Input onChange={changeToken} defaultValue={globalState?.token}/>
+        </Form.Item>
+      </Form>
       <Button onClick={handleSubmit}>Change State</Button>
     </div>
   )

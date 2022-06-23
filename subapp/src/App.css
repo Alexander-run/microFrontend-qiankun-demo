@@ -1,6 +1,9 @@
 @import '~antd/dist/antd.css';
 .App {
   text-align: center;
+  padding: 20px;
+  border: 1px solid lightblue;
+  border-radius: 12px;
 }
 
 .App-logo {

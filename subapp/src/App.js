@@ -12,6 +12,7 @@ const App = () => {
   return (
     <MyContext.Provider value={initState}>
       <div className="App">
+        <h1>React Sub APP</h1>
         <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/microApp1' : '/'}>
           <Routes>
             <Route path='/index' element={ <List /> }/>

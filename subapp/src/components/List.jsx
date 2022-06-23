@@ -55,7 +55,6 @@ const List = () => {
 
   return (
     <>
-      <Button type='primary' onClick={handleSetMessage}>Send a message from Sub app</Button>
       <br/><br/>
       <Button type='primary' onClick={handleRoute}>Route to another page</Button>
       <br/><br/>
@@ -64,7 +63,9 @@ const List = () => {
       <CardsWrapper className='cards-container'>
         {dataList.map(item => {
           return (
-            <Card title={item.title} style={{ width: 260 }}></Card>
+            <Card className='card-item' title={item.title}>
+              <p>{item.apiVO?.docUrl}</p>
+            </Card>
           )
         })}
       </CardsWrapper>

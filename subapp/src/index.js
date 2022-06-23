@@ -5,6 +5,7 @@ import App from './App';
 import './public-path'
 import actions from './shared/actions'
 // import { mainApp, MainApp } from './store/mainApp.ts'
+let root = null
 function render(props) {
   const { container } = props;
   if (props) {
@@ -12,7 +13,7 @@ function render(props) {
     actions.setActions(props);
     console.log(props)
   }
-  const root = ReactDOM.createRoot( 
+  root = ReactDOM.createRoot( 
     container ? container.querySelector('#root') : document.getElementById('root')
   );
   root.render(
@@ -51,6 +52,5 @@ export async function mount(props) {
 
 export async function unmount(props) {
   console.log('react-app unmount')
-  const { container } = props;
-  ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.querySelector('#root'));
+  root.unmount()  
 }

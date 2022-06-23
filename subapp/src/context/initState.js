@@ -1,6 +1,6 @@
 const initState = {
   token: '',
-  name: 'microApp1'
+  name: 'microApp'
 }
 
 export {
