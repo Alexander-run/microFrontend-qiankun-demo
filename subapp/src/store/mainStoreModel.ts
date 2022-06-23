@@ -1,0 +1,7 @@
+class MainStoreModel {
+
+}
+
+export {
+  MainStoreModel
+}
