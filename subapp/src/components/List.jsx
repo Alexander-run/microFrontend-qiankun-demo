@@ -42,7 +42,7 @@ const List = () => {
     // })
   }
   const handleRoute = () => {
-    history.push(`/microApp1/stateFetch`)
+    history.push(`/reactSubApp/stateFetch`)
   }
   const handleSearch = (e) => {
     fetchDataList(e)
