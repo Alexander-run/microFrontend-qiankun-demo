@@ -20,14 +20,16 @@ const List = () => {
     fetchDataList()
     initGlobalActions()
   }, [])
-  const fetchDataList = (e) => {
+  const fetchDataList = async (e) => {
     const params = {
       category: '',
       keyword: e || ''
     }
-    getAllData(params).then(res => {
-      setDataList(res.data)
-    })
+    // getAllData(params).then(res => {
+    //   setDataList(res.data)
+    // })
+    const { data } = await getAllData(params)
+    setDataList(data)
   }
 
   const initGlobalActions = () => {
