@@ -17,12 +17,5 @@ module.exports = {
       libraryTarget: 'umd',
       chunkLoadingGlobal: `webpackJsonp_${name}`
     }
-  },
-  plugins: [
-    require('postcss-plugin-namespace')('#lee_project', {
-      ignore: [
-        'html', /body/, 'span', 'el-form-item'
-      ]
-    }),
-  ]
+  }
 };
