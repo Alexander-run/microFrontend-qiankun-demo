@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
 let instance = null
 
@@ -8,6 +10,7 @@ function render(props = {}) {
     const { container } = props
     // 为了避免根id#app与其他DOM冲突，需要限制查找范围
     instance = createApp(App).use(router)
+    instance.use(ElementPlus)
     instance.mount(container ? container.querySelector('#subapp') : '#subapp')
 }
 

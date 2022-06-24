@@ -18,3 +18,9 @@
 // enjoy
 
 // author: Alex-run
+
+
+## 坑s
+
+# css样式污染
+用postcss-plugin-namespace插件，给子应用所有class增加统一的全局前缀，使其与主应用样式名隔离开
