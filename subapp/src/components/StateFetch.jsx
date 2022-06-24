@@ -14,7 +14,8 @@ import {
 // import MyContext from '../context'
 // import { observer, inject } from "mobx-react";
 
-import actions from "../shared/actions";
+// import actions from "../shared/actions";
+import {mainApp} from '../store/mainApp.ts'
 
 const StateFetch = () => {
   const [globalState, setGlobalState] = useState({})
@@ -22,13 +23,19 @@ const StateFetch = () => {
     initGlobalData()
   },[])
   const initGlobalData = async () => {
-    actions.onGlobalStateChange((state, prevState) => {
-      const newState = state
-      setGlobalState(newState)
-    },true)
+    // actions.onGlobalStateChange((state, prevState) => {
+    //   const newState = state
+    //   setGlobalState(newState)
+    // },true)
+    const newState = mainApp.store
+    setGlobalState(newState)
   }
   const handleSubmit = () => {
-    actions.setGlobalState(globalState)
+    // actions.setGlobalState(globalState)
+    mainApp.setStore(globalState)
+  }
+  const printStore = () => {
+    console.log(mainApp.store)
   }
   const changeUsername = (e) => {
     const newState = globalState
@@ -52,6 +59,7 @@ const StateFetch = () => {
         </Form.Item>
       </Form>
       <Button onClick={handleSubmit}>Change State</Button>
+      <Button onClick={printStore}>Print State</Button>
     </div>
   )
 }
