@@ -65,7 +65,7 @@ const List = () => {
       <CardsWrapper className='cards-container'>
         {dataList.map(item => {
           return (
-            <Card className='card-item' title={item.title}>
+            <Card key={item.title} className='card-item' title={item.title}>
               <p>{item.apiVO?.docUrl}</p>
             </Card>
           )
