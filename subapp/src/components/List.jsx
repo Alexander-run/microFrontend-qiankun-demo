@@ -29,7 +29,14 @@ const List = () => {
     //   setDataList(res.data)
     // })
     const { data } = await getAllData(params)
-    setDataList(data)
+    const categories = {}
+    data.forEach( _ => {
+      if (!categories.hasOwnProperty(_.category)) {
+        categories[_.category] = []
+      }
+      categories[_.category].push(_)
+    });
+    setDataList(categories)
   }
 
   const initGlobalActions = () => {
@@ -63,11 +70,20 @@ const List = () => {
       <Search placeholder='search api here' onSearch={handleSearch} />
       <br/><br/>
       <CardsWrapper className='cards-container'>
-        {dataList.map(item => {
+        {Object.keys(dataList).map(key=>{
           return (
-            <Card key={item.title} className='card-item' title={item.title}>
-              <p>{item.apiList[0].docUrl}</p>
-            </Card>
+            <div className='cate-container'>
+              <div className='title'>{key}</div>
+              <div>
+                {dataList[key].map(item=>{
+                  return(
+                    <Card key={item.title} className='card-item' title={item.title}>
+                      <p>{item.apiVO.docUrl}</p>
+                    </Card>
+                  )
+                })}
+              </div>
+            </div>
           )
         })}
       </CardsWrapper>
