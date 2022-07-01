@@ -60,13 +60,13 @@ const List = () => {
       <br/><br/>
       <Button type='primary' onClick={handleRoute}>Route to another page</Button>
       <br/><br/>
-      <Search placeholder='search key here' onSearch={handleSearch} />
+      <Search placeholder='search api here' onSearch={handleSearch} />
       <br/><br/>
       <CardsWrapper className='cards-container'>
         {dataList.map(item => {
           return (
             <Card key={item.title} className='card-item' title={item.title}>
-              <p>{item.apiVO?.docUrl}</p>
+              <p>{item.apiList[0].docUrl}</p>
             </Card>
           )
         })}
